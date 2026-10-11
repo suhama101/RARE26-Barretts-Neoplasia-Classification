@@ -59,6 +59,17 @@ This is a single evaluation on the local held-out test split. The local test was
 | FP | 13 |
 | FN | 1 |
 
+## Challenge leaderboard results
+
+The supplied challenge screenshots show the following entries for the `Suhama-RARE26` team and the algorithm `RARE26 Barrett's Neoplasia Classification`:
+
+| Phase | Date shown | Rank shown | Score shown |
+|---|---|---:|---:|
+| Open Development Phase | 23 Aug. 2026 | 136th | 0.0148 |
+| Closed Testing Phase | 6 Sept. 2026 | 23rd | 0.0244 |
+
+The supplied statistics screenshot shows 381 total participants, with 334 submissions to the Sanity Check phase, 272 submissions to the Open Development Phase, and 34 submissions to the Closed Testing Phase.
+
 ## Key findings
 
 - Weighted loss with mild augmentation was the strongest Phase 1 baseline configuration in the reported comparisons.
