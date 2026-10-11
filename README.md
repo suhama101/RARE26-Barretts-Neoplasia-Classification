@@ -70,6 +70,20 @@ The supplied challenge screenshots show the following entries for the `Suhama-RA
 
 The supplied statistics screenshot shows 381 total participants, with 334 submissions to the Sanity Check phase, 272 submissions to the Open Development Phase, and 34 submissions to the Closed Testing Phase.
 
+### Submitted leaderboard screenshots
+
+#### Open Development Phase
+
+![Open Development Phase leaderboard](assets/open-development-leaderboard.png)
+
+#### Closed Testing Phase
+
+![Closed Testing Phase leaderboard](assets/closed-testing-leaderboard.png)
+
+#### Challenge statistics
+
+![Challenge participation statistics](assets/challenge-statistics.png)
+
 ## Key findings
 
 - Weighted loss with mild augmentation was the strongest Phase 1 baseline configuration in the reported comparisons.
