@@ -1,0 +1,58 @@
+================================================================================================================
+FINAL CELL 16D EXPERIMENT 01 VS ViT-S PAIRED CROSS-VALIDATION REPORT
+================================================================================================================
+Matched OOF cases: 2620/2620
+Identity method: sha256
+Common fold assignment verified: True
+
+Experiment 01 pooled OOF:
+Recall: 0.916667
+PPV: 0.392857
+Specificity: 0.924839
+AUROC: 0.970680
+AUPRC: 0.884831
+TP=121 | TN=2301 | FP=187 | FN=11
+Total errors: 198
+
+ViT-S pooled OOF:
+Recall: 0.909091
+PPV: 0.603015
+Specificity: 0.968248
+AUROC: 0.982810
+AUPRC: 0.915879
+Minimum centre recall: 0.862745
+TP=120 | TN=2409 | FP=79 | FN=12
+Total errors: 91
+
+ViT-S minus Experiment 01:
+Recall change: -0.007576
+PPV change: +0.210158
+Specificity change: +0.043408
+AUROC change: +0.012129
+AUPRC change: +0.031049
+False-positive reduction: +108
+False-negative reduction: -1
+Total-error reduction: +107
+
+ViT-S threshold stability:
+Threshold range: 0.207118616009
+Maximum/minimum ratio: 2156.186370
+Threshold instability detected: True
+
+Development-only decision:
+VITS_PAIRED_CV_LEAD_PENDING_ORIGINAL_SPLIT_MULTI_SEED_STABILITY
+
+Recommended next action:
+ViT-S is the paired cross-validation development lead, but its fold thresholds are highly variable. Run Cell 16E using predeclared original-split seeds [42, 2026, 3407]. Use all three seeds without selecting the best seed. Assess ranking, operating-point and threshold stability, then construct an equal-weight three-seed ensemble. Do not open the held-out test.
+
+Held-out test CSV loaded: False
+Held-out test predictions loaded: False
+Held-out test evaluated: False
+Held-out test used for decision: False
+New model training performed: False
+New image inference performed: False
+New threshold search performed: False
+Best fold selected: False
+Best seed selected: False
+
+STATUS: CELL16D_EXP01_VS_VITS_PAIRED_CV_COMPARISON_COMPLETE

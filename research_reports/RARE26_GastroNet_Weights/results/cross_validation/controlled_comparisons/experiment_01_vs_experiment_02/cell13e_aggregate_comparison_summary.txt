@@ -1,0 +1,60 @@
+RARE26 GastroNet Controlled Pretraining Comparison
+Experiment 01 versus Experiment 02
+============================================================================
+
+Development data:
+Three-fold out-of-fold validation only
+Cases: 2,620
+Normal: 2,488
+Neoplasia: 132
+
+Experiment 01:
+Experiment 01 GastroNet-5M DINOv1
+
+Experiment 02:
+Experiment 02 SWSL + GastroNet-5M DINOv1
+
+Macro three-fold results:
+Experiment 01 mean AUPRC: 0.886694
+Experiment 02 mean AUPRC: 0.901907
+AUPRC gain: +0.015213
+
+Experiment 01 mean AUROC: 0.970978
+Experiment 02 mean AUROC: 0.973870
+AUROC gain: +0.002892
+
+Experiment 01 mean recall: 0.916667
+Experiment 02 mean recall: 0.909091
+Recall change: -0.007576
+
+Experiment 01 mean PPV: 0.476768
+Experiment 02 mean PPV: 0.586399
+PPV change: +0.109631
+
+Experiment 01 mean specificity: 0.924832
+Experiment 02 mean specificity: 0.965037
+Specificity change: +0.040204
+
+Threshold stability:
+Experiment 01 threshold range: 0.023648262024
+Experiment 02 threshold range: 0.003263473511
+
+OOF error comparison:
+Experiment 01 total errors: 198
+Experiment 02 total errors: 99
+Experiment 01 errors fixed by Experiment 02: 146
+New Experiment 02 errors: 47
+False-positive reduction: 100
+False-negative reduction: -1
+
+Development decision: EXPERIMENT_02_DEVELOPMENT_LEAD
+Recommended checkpoint: RN50_Billion-Scale-SWSL%2BGastroNet-5M_DINOv1.pth
+
+Experiment 02 achieved higher mean three-fold AUPRC, non-inferior or higher mean AUROC, and maintained the required mean recall of at least 0.90. It is therefore the development-only lead candidate. This is not an official hidden-test result.
+
+Held-out test CSV loaded: No
+Held-out test predictions loaded: No
+Held-out test evaluated: No
+Held-out test used for decision: No
+
+Status: EXP02_THREE_FOLD_AGGREGATE_AND_EXP01_COMPARISON_COMPLETE

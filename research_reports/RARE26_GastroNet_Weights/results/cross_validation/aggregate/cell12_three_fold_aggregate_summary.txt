@@ -1,0 +1,68 @@
+RARE26 GastroNet ResNet-50
+Three-Fold Cross-Validation Aggregate Summary
+========================================================================
+
+Model:
+RN50_GastroNet-5M_DINOv1.pth
+
+OOF records: 2620
+Unique OOF cases: 2620
+Normal cases: 2488
+Neoplasia cases: 132
+
+Fold results:
+
+Fold 1:
+  Threshold: 0.006217956543
+  AUPRC: 0.887400
+  AUROC: 0.984132
+  Recall: 0.909091
+  PPV: 0.454545
+  Specificity: 0.942169
+  TP / FP / FN / TN: 40 / 48 / 4 / 782
+
+Fold 2:
+  Threshold: 0.024795532227
+  AUPRC: 0.902969
+  AUROC: 0.979973
+  Recall: 0.909091
+  PPV: 0.727273
+  Specificity: 0.981906
+  TP / FP / FN / TN: 40 / 15 / 4 / 814
+
+Fold 3:
+  Threshold: 0.001147270203
+  AUPRC: 0.869713
+  AUROC: 0.948829
+  Recall: 0.931818
+  PPV: 0.248485
+  Specificity: 0.850422
+  TP / FP / FN / TN: 41 / 124 / 3 / 705
+
+Macro three-fold performance:
+Mean AUPRC: 0.886694 ± 0.016639
+Mean AUROC: 0.970978 ± 0.019294
+Mean recall: 0.916667 ± 0.013122
+Mean PPV: 0.476768 ± 0.240166
+Mean specificity: 0.924832 ± 0.067434
+
+Pooled OOF operating performance:
+Recall: 0.916667
+PPV: 0.392857
+Specificity: 0.924839
+AUROC: 0.970680
+AUPRC: 0.884831
+TP / FP / FN / TN: 121 / 187 / 11 / 2301
+
+Scientific assessment:
+The GastroNet RN50 model shows consistently strong ranking performance and maintains at least 0.90 recall across all three folds. However, PPV, specificity and fold-specific thresholds vary substantially, indicating probability-calibration and false-positive instability.
+
+Pooled AUROC and AUPRC are descriptive because probabilities came from separately trained fold models.
+
+Held-out test loaded: No
+Held-out test evaluated: No
+New training performed: No
+New inference performed: No
+New threshold search performed: No
+
+Status: THREE_FOLD_CROSS_VALIDATION_AGGREGATE_COMPLETE

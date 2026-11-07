@@ -1,0 +1,16 @@
+{
+  "created_utc": "2026-07-25T16:15:38.922054+00:00",
+  "decision": "FINAL_LOCKED_VITS_ENSEMBLE_TEST_EVALUATED_NO_FURTHER_TEST_BASED_TUNING",
+  "model_remains_locked": true,
+  "component_seeds": [
+    42,
+    2026,
+    3407
+  ],
+  "weight_per_seed": 0.3333333333333333,
+  "locked_threshold": 0.23794867920676918,
+  "held_out_test_result_changed_model": false,
+  "held_out_test_result_changed_threshold": false,
+  "held_out_test_result_changed_weights": false,
+  "recommended_next_action": "Consolidate the final model card, experiment table, paper-ready figures, limitations and reproducibility package. Preserve the locked model unchanged for the official challenge submission workflow."
+}

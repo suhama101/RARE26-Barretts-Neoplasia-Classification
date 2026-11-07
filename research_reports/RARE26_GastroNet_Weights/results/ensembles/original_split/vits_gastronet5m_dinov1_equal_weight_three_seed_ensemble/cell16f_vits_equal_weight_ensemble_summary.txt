@@ -1,0 +1,64 @@
+============================================================================================================================
+FINAL CELL 16F ViT-S EQUAL-WEIGHT THREE-SEED ENSEMBLE REPORT
+============================================================================================================================
+Component seeds: [42, 2026, 3407]
+Weight per seed: 0.333333
+Matched validation cases: 461/461
+
+Experiment 01:
+Locked threshold: 0.004699707031
+Recall: 0.956522
+PPV: 0.594595
+Specificity: 0.965753
+AUROC: 0.995235
+AUPRC: 0.941969
+TP=22 | TN=423 | FP=15 | FN=1
+Total errors: 16
+
+ViT-S Equal-Weight Three-Seed Ensemble:
+Locked threshold: 0.237948679207
+Recall: 0.956522
+PPV: 0.758621
+Specificity: 0.984018
+AUROC: 0.997419
+AUPRC: 0.965817
+Minimum centre recall: 0.888889
+TP=22 | TN=431 | FP=7 | FN=1
+Total errors: 8
+
+ViT-S Ensemble minus Experiment 01:
+Recall change: +0.000000
+PPV change: +0.164026
+Specificity change: +0.018265
+AUROC change: +0.002184
+AUPRC change: +0.023847
+False-positive reduction: +8
+False-negative reduction: +0
+Total-error reduction: +8
+
+Final-lead conditions:
+{
+  "paired_cross_validation_lead_verified": true,
+  "ensemble_recall_not_worse_than_exp01": true,
+  "minimum_centre_recall_compliant": true,
+  "ensemble_auprc_not_worse_than_exp01": true,
+  "ensemble_auroc_not_worse_than_exp01": true,
+  "ensemble_specificity_not_worse_than_exp01": true,
+  "ensemble_total_errors_not_worse_than_exp01": true
+}
+
+Final development-only decision:
+VITS_EQUAL_WEIGHT_THREE_SEED_ENSEMBLE_FINAL_DEVELOPMENT_LEAD_READY_FOR_ONE_TIME_HELD_OUT_TEST
+
+Recommended next action:
+Lock the ViT-S three-seed ensemble definition, the three component checkpoints, equal weights and the validation-selected ensemble threshold. The next step may perform one final inference pass on the held-out test using all three seed checkpoints. Do not change the model, seed weights or threshold after the held-out test is opened.
+
+Best seed selected: False
+Held-out test CSV loaded: False
+Held-out test predictions loaded: False
+Held-out test evaluated: False
+Held-out test used for decision: False
+New training performed: False
+New image inference performed: False
+
+STATUS: CELL16F_VITS_EQUAL_WEIGHT_THREE_SEED_ENSEMBLE_COMPLETE

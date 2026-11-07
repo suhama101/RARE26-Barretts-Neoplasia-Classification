@@ -1,0 +1,77 @@
+{
+  "experiment_id": "exp01_rn50_gastronet5m_dinov1",
+  "experiment_name": "GastroNet-5M DINOv1 ResNet-50 Two-Stage Pilot",
+  "architecture": "torchvision_resnet50",
+  "pretraining_source": "GastroNet-5M DINOv1",
+  "task": "Binary NDBE versus neoplasia classification",
+  "seed": 42,
+  "train_count": 2159,
+  "validation_count": 461,
+  "test_loader_created": false,
+  "test_evaluation_allowed_during_training": false,
+  "image_size": 224,
+  "batch_size": 32,
+  "loss": "BCEWithLogitsLoss",
+  "positive_class_weight": 18.807339449541285,
+  "stage_1": {
+    "name": "linear_probe",
+    "description": "Freeze the full GastroNet ResNet-50 backbone and train only the new binary classification head.",
+    "epochs": 3,
+    "optimizer": "AdamW",
+    "head_learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "scheduler": "CosineAnnealingLR",
+    "scheduler_t_max": 3
+  },
+  "stage_2": {
+    "name": "partial_fine_tuning",
+    "description": "Unfreeze ResNet layer4 and the binary head. Keep conv1, bn1, layer1, layer2 and layer3 frozen.",
+    "maximum_epochs": 7,
+    "optimizer": "AdamW",
+    "layer4_learning_rate": 1e-05,
+    "head_learning_rate": 0.0001,
+    "weight_decay": 0.0001,
+    "scheduler": "CosineAnnealingLR",
+    "scheduler_t_max": 7
+  },
+  "automatic_mixed_precision": true,
+  "gradient_clipping_max_norm": 1.0,
+  "checkpoint_selection_metric": "validation_AUPRC",
+  "checkpoint_selection_direction": "maximize",
+  "early_stopping": {
+    "enabled": true,
+    "metric": "validation_AUPRC",
+    "patience": 3,
+    "minimum_improvement": 0.0001,
+    "applies_to": "stage_2"
+  },
+  "threshold_selection": {
+    "performed_during_training": false,
+    "planned_after_checkpoint_lock": true,
+    "selection_dataset": "validation_only",
+    "minimum_overall_recall": 0.9,
+    "minimum_per_centre_recall": 0.8,
+    "primary_objective": "highest validation precision among eligible thresholds"
+  },
+  "held_out_test_policy": "The test set must not be used for checkpoint, epoch, threshold, calibration or ensemble selection.",
+  "full_backbone_fine_tuning": {
+    "included_in_current_pilot": false,
+    "future_condition": "Only consider full fine-tuning if the validation evidence from partial fine-tuning is clearly promising."
+  },
+  "output_files": {
+    "best_checkpoint": "/content/drive/MyDrive/RARE26_GastroNet_Weights/models/exp01_rn50_gastronet5m_dinov1_best.pth",
+    "latest_checkpoint": "/content/drive/MyDrive/RARE26_GastroNet_Weights/models/exp01_rn50_gastronet5m_dinov1_latest.pth",
+    "training_history": "/content/drive/MyDrive/RARE26_GastroNet_Weights/logs/exp01_rn50_gastronet5m_dinov1_training_history.csv",
+    "validation_predictions": "/content/drive/MyDrive/RARE26_GastroNet_Weights/predictions/exp01_rn50_gastronet5m_dinov1_validation_predictions.csv",
+    "validation_metrics": "/content/drive/MyDrive/RARE26_GastroNet_Weights/results/exp01_rn50_gastronet5m_dinov1_validation_metrics.csv",
+    "training_curves": "/content/drive/MyDrive/RARE26_GastroNet_Weights/figures/exp01_rn50_gastronet5m_dinov1_training_curves.png",
+    "threshold_search": "/content/drive/MyDrive/RARE26_GastroNet_Weights/thresholds/exp01_rn50_gastronet5m_dinov1_validation_threshold_search.csv"
+  },
+  "parameter_counts": {
+    "total_parameters": 23510081,
+    "stage_1_trainable_parameters": 2049,
+    "stage_1_frozen_parameters": 23508032,
+    "stage_2_planned_trainable_parameters": 14966785,
+    "stage_2_planned_frozen_parameters": 8543296
+  }
+}

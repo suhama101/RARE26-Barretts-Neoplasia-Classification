@@ -1,0 +1,73 @@
+================================================================================================================================
+FINAL CELL 16G LOCKED ViT-S ENSEMBLE HELD-OUT TEST REPORT
+================================================================================================================================
+Model:
+ViT-S GastroNet-5M DINOv1 equal-weight three-seed ensemble
+
+Component seeds:
+[42, 2026, 3407]
+
+Weight per seed:
+0.333333
+
+Locked threshold:
+0.237948679207
+
+Threshold source:
+Cell 16F original-validation-only ensemble lock
+
+Held-out test cases:
+Total: 468
+Normal: 442
+Neoplasia: 26
+
+Final locked ViT-S held-out test:
+Recall: 0.961538
+PPV: 0.657895
+Specificity: 0.970588
+NPV: 0.997674
+Accuracy: 0.970085
+Balanced accuracy: 0.966063
+F1: 0.781250
+AUROC: 0.989210
+AUPRC: 0.961356
+Minimum centre recall: 0.900000
+TP=25 | TN=429 | FP=13 | FN=1
+Total errors: 14
+
+Experiment 01 held-out test:
+Recall: 1.000000
+PPV: 0.590909
+Specificity: 0.959276
+AUROC: 0.998695
+AUPRC: 0.981158
+TP=26 | TN=424 | FP=18 | FN=0
+Total errors: 18
+
+Final ViT-S minus Experiment 01:
+Recall change: -0.038462
+PPV change: +0.066986
+Specificity change: +0.011312
+AUROC change: -0.009485
+AUPRC change: -0.019802
+False-positive reduction: +5
+False-negative reduction: -1
+Total-error reduction: +4
+
+Scientific lock audit:
+New training performed: False
+Best seed selected: False
+Checkpoint selected using test: False
+Threshold search on test: False
+Calibration using test: False
+Ensemble weights changed using test: False
+Model changed after test: False
+Further test-based tuning allowed: False
+
+Final reporting decision:
+FINAL_LOCKED_VITS_ENSEMBLE_TEST_EVALUATED_NO_FURTHER_TEST_BASED_TUNING
+
+Recommended next action:
+Prepare the final reproducibility package, model card, paper-ready experiment tables, figures, limitations and official challenge-submission assets. The model, seeds, weights and threshold must remain unchanged.
+
+STATUS: CELL16G_VITS_FINAL_LOCKED_ENSEMBLE_HELD_OUT_TEST_COMPLETE
